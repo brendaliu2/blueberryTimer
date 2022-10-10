@@ -1,0 +1,37 @@
+.newtimer-form-container {
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container-item{
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+#startTime-label{
+    font-size: 1.5em;
+    padding: .5em;
+    color: white;
+}
+
+#startTime{
+    padding: .5em;
+    margin-right: 3px;
+}
+
+#startTime-submit-btn{
+    border: 2px solid #8ecae6;
+    border-radius: 10px;
+    font-size: 1em;
+    margin: .25em;
+    padding: .5em;
+    text-align: center;
+    background-color: white;
+}

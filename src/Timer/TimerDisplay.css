@@ -1,0 +1,30 @@
+.timer-container{
+    padding: 2em;
+    background: rgba(2, 62, 138, 0.3);
+    display: flex;
+    justify-content: center;
+    margin-right: 5em;
+    margin-left: 5em;
+}
+
+.countdown {
+    font-size: 8em;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
+    color: white;
+}
+
+.timerBtn{
+    border: 3px solid #8ecae6;
+    border-radius: 20px;
+    font-size: 2em;
+    margin: .25em;
+    padding: .5em;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 5px #00b4d8;
+}
+
+.timerBtn:hover {
+    background-color: #8ecae6;
+}
