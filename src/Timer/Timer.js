@@ -17,6 +17,10 @@ export default function BlueBerryTimer() {
 
   const [count, setCount] = useState(blueberryTime);
 
+  const timerDone = count <= 0 ? true : false;
+
+  // if(timerDone) clearInterval(timerId.current);
+
   function startTimer() {
     timerId.current = setInterval(() => {
       setCount(c => c - 1);
@@ -33,6 +37,7 @@ export default function BlueBerryTimer() {
 
   function registerTimer(evt) {
     evt.preventDefault();
+    clearInterval(timerId.current);
     const input = +evt.target[0].value;
     duration = input * 60;
     setCount(duration);
@@ -46,14 +51,16 @@ export default function BlueBerryTimer() {
 
   return (
     <>
-    <TimerDisplay
-      minutes={minutes}
-      seconds={seconds}
-      startTimer={startTimer}
-      pauseTimer={pauseTimer}
-      resetTimer={resetTimer}
-    />
-    <NewTimer registerTimer={registerTimer} />
+      <TimerDisplay
+        minutes={minutes}
+        seconds={seconds}
+        startTimer={startTimer}
+        pauseTimer={pauseTimer}
+        resetTimer={resetTimer}
+        isDone={timerDone}
+      />
+      <NewTimer registerTimer={registerTimer} />
     </>
+
   );
 };

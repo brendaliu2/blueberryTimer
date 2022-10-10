@@ -7,7 +7,8 @@
     margin-left: 5em;
 }
 
-.countdown {
+.countdown,
+.countdown-done {
     font-size: 8em;
     font-family: 'Comic Neue', cursive;
     font-weight: 700;
@@ -28,3 +29,13 @@
 .timerBtn:hover {
     background-color: #8ecae6;
 }
+
+.countdown-done {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

@@ -8,7 +8,7 @@ import './TimerDisplay.css';
  * - startTimer (function)
  * - pauseTimer (function)
  * - resetTimer (function)
- * - registerTimer (function)
+ * - isDone (boolean)
  *
  * State: none
  *
@@ -20,16 +20,22 @@ export default function TimerDisplay({
   startTimer,
   pauseTimer,
   resetTimer,
-  registerTimer
+  isDone
 }) {
   return (
-
     <div className="timer-container">
       <div className='timer-item'>
-        <h2 className="countdown">{minutes}:{seconds}</h2>
-
-        <button className='timerBtn' onClick={startTimer}>Start</button>
-        <button className='timerBtn' onClick={pauseTimer}>Pause</button>
+        {isDone ?
+          <>
+            <h1 className="countdown-done">Timer Done</h1>
+          </>
+          :
+          <>
+            <h2 className="countdown">{minutes}:{seconds}</h2>
+            <button className='timerBtn' onClick={startTimer}>Start</button>
+            <button className='timerBtn' onClick={pauseTimer}>Pause</button>
+          </>
+        }
         <button className='timerBtn' onClick={resetTimer}>Reset</button>
 
       </div>
