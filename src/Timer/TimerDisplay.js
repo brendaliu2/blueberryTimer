@@ -1,6 +1,11 @@
 import './TimerDisplay.css';
+import { useContext } from "react";
+import soundContext from "../soundContext";
 import useSound from 'use-sound';
 import ding from '../ding.mp3';
+import blueberry from '../blueberry.png';
+import blueberryDone from '../blueberryDone.gif';
+
 
 /** Timer Display
  *
@@ -25,7 +30,12 @@ export default function TimerDisplay({
   isDone
 }) {
 
-  const [play] = useSound(ding);
+  const [play, { stop }] = useSound(ding);
+  const { isMuted } = useContext(soundContext);
+
+  function soundOn(){
+    isMuted ? stop() : play();
+  }
 
   return (
     <div className="timer-container">
@@ -33,7 +43,9 @@ export default function TimerDisplay({
         {isDone ?
           <>
             <h1 className="countdown-done">Timer Done</h1>
-            {play()}
+            <img src={blueberryDone} alt='blueberry doodle' className='berry'/>
+            {soundOn()}
+            {/* <button className='timerBtn' onClick={() => stop()}>Stop</button> */}
           </>
           :
           <>

@@ -1,6 +1,18 @@
+.header-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
 .timer-heading{
     font-size: 2em;
     color: black;
     font-family: 'Comic Neue', cursive;
     color: white;
+    display: flex;
+}
+
+.berry-logo{
+    height: 90px;
+    display: flex;
 }

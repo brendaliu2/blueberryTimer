@@ -1,4 +1,5 @@
 import './Header.css';
+import blueberry from '../blueberry.png';
 
 /** Header
  *
@@ -9,7 +10,8 @@ import './Header.css';
  */
 export default function Header() {
   return (
-    <div>
+    <div className='header-container'>
+      <img src={blueberry} alt='blueberry doodle' className='berry-logo' />
       <h1 className='timer-heading'>Blueberry Timer</h1>
     </div>
   )

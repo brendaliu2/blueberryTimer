@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import TimerDisplay from "./TimerDisplay";
 import NewTimer from "../Form/NewTimer";
+import soundContext from "../soundContext";
 
 const blueberryTime = 1500;
 let duration = blueberryTime;
@@ -17,10 +18,15 @@ export default function BlueBerryTimer() {
 
 
   const [count, setCount] = useState(blueberryTime);
+  const [isMuted, setIsMuted] = useState(false);
 
   const timerDone = count <= 0 ? true : false;
 
   // if(timerDone) clearInterval(timerId.current);
+
+  function changeMute(){
+    setIsMuted(!isMuted);
+  }
 
   function startTimer() {
     timerId.current = setInterval(() => {
@@ -51,7 +57,7 @@ export default function BlueBerryTimer() {
   seconds = seconds < 10 ? "0" + seconds : seconds;
 
   return (
-    <>
+    <soundContext.Provider value={{ isMuted }}>
       <TimerDisplay
         minutes={minutes}
         seconds={seconds}
@@ -61,7 +67,9 @@ export default function BlueBerryTimer() {
         isDone={timerDone}
       />
       <NewTimer registerTimer={registerTimer} />
-    </>
+      <button onClick={changeMute}>{isMuted ? "UnMute": "Mute"}</button>
+      {/* <button onClick={changeMute}>{isMuted ? <i class="bi bi-volume-up-fill"></i>: <i class="bi bi-volume-mute-fill"></i>}</button> */}
+    </soundContext.Provider>
 
   );
 };
