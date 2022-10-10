@@ -3,8 +3,8 @@
     background: rgba(2, 62, 138, 0.3);
     display: flex;
     justify-content: center;
-    margin-right: 5em;
-    margin-left: 5em;
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 .countdown,
@@ -24,6 +24,12 @@
     text-align: center;
     background-color: white;
     box-shadow: 2px 5px #00b4d8;
+}
+
+@media(max-width: 555px) {
+  .timerBtn {
+    font-size: 1em;
+  }
 }
 
 .timerBtn:hover {

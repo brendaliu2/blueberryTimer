@@ -1,4 +1,6 @@
 import './TimerDisplay.css';
+import useSound from 'use-sound';
+import ding from '../ding.mp3';
 
 /** Timer Display
  *
@@ -22,12 +24,16 @@ export default function TimerDisplay({
   resetTimer,
   isDone
 }) {
+
+  const [play] = useSound(ding);
+
   return (
     <div className="timer-container">
       <div className='timer-item'>
         {isDone ?
           <>
             <h1 className="countdown-done">Timer Done</h1>
+            {play()}
           </>
           :
           <>
