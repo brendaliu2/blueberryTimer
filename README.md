@@ -1,4 +1,4 @@
-# Blueberry Time
+# Blueberry Timer
 
 Created with React.
 An Pomodoro Timer clone. The default is set to 25 minutes, but users can pick any amount between 1-59 minutes. A blueberry doodle will dance when timer is done. There is also a mutable ding for a finished timer.
